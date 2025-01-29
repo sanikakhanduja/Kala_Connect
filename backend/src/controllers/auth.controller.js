@@ -1,9 +1,10 @@
 import { generateJWT } from "../lib/generateToken.js"
 import User from "../models/user.model.js"
 import bcrypt from "bcryptjs"
+import Seller from "../models/seller.model.js"
 
 export const signup = async (req,res)=>{
-    const { email,fullName,password,role } = req.body
+    const { email,fullName,password,role,bio,location,phone,shopName,profilePicture } = req.body
     try{
         if(!email || !password || !fullName || !role){
             return res.status(400).json({message:"all fields are required"})
@@ -25,7 +26,19 @@ export const signup = async (req,res)=>{
             password:hash,
             role
         })
-        if(newUser){
+       // ✅ If user is a seller, create a seller profile
+       if (role === "seller") {
+        const newSeller = new Seller({
+            userId: newUser._id, // Link to the User model
+            shopName: shopName || "",  // Optional fields
+            bio: bio || "",
+            location: location || "",
+            profilePicture: profilePicture || "",
+            phone: phone
+        });
+
+        await newSeller.save();
+    }
            generateJWT(newUser._id,res)
           await newUser.save()
         res.status(201).json({
@@ -34,9 +47,7 @@ export const signup = async (req,res)=>{
             email:newUser.email,
             role:newUser.role
          })
-        }else{
-           res.status(400).json({message:"invalid user data input"})
-        }
+       
     }catch (error){
         console.log("error in the signup controller "+ error)
         res.status(500).json({message:"internal server error"})

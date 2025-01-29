@@ -5,7 +5,8 @@ const sellerSchema = new mongoose.Schema({
     shopName: { type: String},
     bio: { type: String },
     location: { type: String},
-    profilePicture: { type: String }, },
+    profilePicture: { type: String }, 
+    phone:{type:String,minLength:10,maxLength:10}},
     {timestamps:true}
 );
 
