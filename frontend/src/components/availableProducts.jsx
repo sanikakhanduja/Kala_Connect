@@ -9,7 +9,7 @@ const AvailableProducts = ({ data }) => {
         <div className='container mx-auto p-4'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {data.map((item)=>(
-        <Link to={`/product/${item._id}`} id={item._id} className='container mx-auto p-4'> 
+        <Link to={`/getproduct/${item._id}`} id={item._id} className='container mx-auto p-4'> 
             <div className=" rounded-lg shadow-md overflow-hidden text-center">
             <img src={item.images[0]} alt="Bead Chain" className="w-full h-50 border:none rounded-4xl object-cover" />
             <div className="p-4">

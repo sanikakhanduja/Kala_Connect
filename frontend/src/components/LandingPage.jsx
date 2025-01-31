@@ -43,7 +43,7 @@ const LandingPage = () => {
         </motion.p>
         <motion.button
           className="bg-[#F1C6AC] px-12 py-4 rounded-full text-lg font-bold hover:cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => window.location.href = '/products'} // Adjust to actual product page route
+          onClick={() => window.location.href = '/getproducts'} // Adjust to actual product page route
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

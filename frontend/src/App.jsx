@@ -18,9 +18,9 @@ function App() {
     <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/products" element={<HomePage />} />
+          <Route path="/getproducts" element={<HomePage />} />
           <Route path="/know_your_artisans" element={<KnowYourArtisans />} />
-          <Route path={"/product/:id"} element={<ProductById></ProductById>}></Route>
+          <Route path={"/getproduct/:id"} element={<ProductById></ProductById>}></Route>
           <Route path="/signup" element= {<SignUpPage></SignUpPage>}></Route>
          <Route path="/login" element= {<LoginPage></LoginPage>}></Route>
           {/* <Route path="/cart" element={<Cart />} /> */}

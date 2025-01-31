@@ -18,7 +18,7 @@ const Navbar = () => {
                 {/* Navigation Links */}
                 <div className="hidden md:flex space-x-10 text-xl font-medium text-white">
                     <Link to="/" className="hover:text-[#F1C6AC] font-serif transition duration-300">Home</Link>
-                    <Link to="/products" className="hover:text-[#F1C6AC] font-serif transition duration-300">Products</Link>
+                    <Link to="/getproducts" className="hover:text-[#F1C6AC] font-serif transition duration-300">Products</Link>
                     <Link to="/know_your_artisans" className="hover:text-[#F1C6AC] font-serif transition duration-300">Know Your Artisans</Link>
                 </div>
 
