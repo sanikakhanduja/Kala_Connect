@@ -20,7 +20,7 @@ export const addProduct = async(req,res)=>{
             productName,
             description,
             price,
-            category,
+            category:category.toLowerCase(),
             images: imageUrls,
             quantity
         });
