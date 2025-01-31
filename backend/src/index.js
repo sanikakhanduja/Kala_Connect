@@ -30,7 +30,6 @@ app.use((req, res, next) => {
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   res.setHeader('Pragma', 'no-cache'); // Older HTTP 1.0 caches
   res.setHeader('Expires', '0'); // Proxies will not cache the response
-  res.setHeader('Content-Type', 'application/json');
   next();
 });
 
