@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar"; // Adjust the path if needed
+import LandingPage from "./components/LandingPage";
+import KnowYourArtisans from "./components/KnowYouArtisans";
+import AvailableProducts from "./components/availableProducts";
+import HomePage from "./pages/HomePage";
+import ProductById from "./components/productById";
+import { axiosInstance } from "./utils/axios";
+import { Navigate } from "react-router-dom";
+import SignUpPage from "./pages/Signup";
+import LoginPage from "./pages/LoginPage";
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="content">
+   
+    <Navbar></Navbar>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/getproducts" element={<HomePage />} />
+          <Route path="/know_your_artisans" element={<KnowYourArtisans />} />
+          <Route path={"/getproduct/:id"} element={<ProductById></ProductById>}></Route>
+          <Route path="/signup" element= {<SignUpPage></SignUpPage>}></Route>
+         <Route path="/login" element= {<LoginPage></LoginPage>}></Route>
+          {/* <Route path="/cart" element={<Cart />} /> */}
+        </Routes>
+       
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;

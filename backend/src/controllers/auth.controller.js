@@ -30,6 +30,7 @@ export const signup = async (req,res)=>{
        if (role === "seller") {
         const newSeller = new Seller({
             userId: newUser._id, // Link to the User model
+            userName:newUser.fullName,
             shopName: shopName || "",  // Optional fields
             bio: bio || "",
             location: location || "",
