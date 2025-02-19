@@ -45,11 +45,7 @@ Kala Connect bridges this gap by offering:
 ✅ SDG 12 – Promote responsible consumption and production
 
 🛠 Tech Stack
-🔹 Frontend: HTML, CSS, JavaScript, Tailwind, React.js
-🔹 Backend: Node.js, Express.js
-🔹 Database: MongoDB
-🔹 AI/ML: GeminiAPI
-🔹 Hosting: Render
+🔹 Frontend: HTML, CSS, JavaScript, UI/UX design
 
 🔮 Future Scope
 🚀 Advanced AI Recommendations – Personalized suggestions based on browsing history
